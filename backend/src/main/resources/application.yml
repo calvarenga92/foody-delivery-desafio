@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: rastreador
+
+  datasource:
+    url: jdbc:sqlite:rastreador.db
+    driver-class-name: org.sqlite.JDBC
+
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:chave-de-desenvolvimento-trocar-em-producao-min-32-bytes}
+    expiracao-minutos: 120
+
+server:
+  port: 8080

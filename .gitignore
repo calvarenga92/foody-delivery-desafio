@@ -1,0 +1,37 @@
+# Notas internas de estudo e decisão — não fazem parte da entrega
+_notas/
+
+# Java / Maven
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+
+# Banco local
+*.db
+*.sqlite
+*.sqlite3
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+coverage/
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# SO
+.DS_Store
+Thumbs.db
