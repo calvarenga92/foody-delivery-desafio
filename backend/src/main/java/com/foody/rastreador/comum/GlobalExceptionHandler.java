@@ -1,5 +1,6 @@
 package com.foody.rastreador.comum;
 
+import com.foody.rastreador.pedido.PedidoNaoEncontradoException;
 import com.foody.rastreador.pedido.TransicaoInvalidaException;
 import com.foody.rastreador.usuario.CredenciaisInvalidasException;
 import com.foody.rastreador.usuario.EmailJaCadastradoException;
@@ -26,6 +27,12 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.badRequest()
                 .body(ApiError.de("DADOS_INVALIDOS", "Verifique os campos informados", detalhes));
+    }
+
+    @ExceptionHandler(PedidoNaoEncontradoException.class)
+    public ResponseEntity<ApiError> pedidoNaoEncontrado(PedidoNaoEncontradoException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiError.de("PEDIDO_NAO_ENCONTRADO", ex.getMessage()));
     }
 
     @ExceptionHandler(TransicaoInvalidaException.class)
