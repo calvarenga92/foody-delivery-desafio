@@ -88,7 +88,7 @@ class PedidoControllerIT {
 
     @Test
     @DisplayName("pedido criado nasce recebido com total somado")
-    void criarPedido() throws Exception {
+    void criaPedidoComSucesso() throws Exception {
         mockMvc.perform(post("/api/pedidos")
                         .header(HttpHeaders.AUTHORIZATION, autorizacao)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -156,6 +156,20 @@ class PedidoControllerIT {
                                 {"status":"ENTREGUE"}"""))
                 .andExpect(status().isConflict())
                 .andExpect(jsonPath("$.codigo").value("TRANSICAO_INVALIDA"));
+    }
+
+    @Test
+    @DisplayName("status inexistente responde 400 e nao 500")
+    void statusInexistente() throws Exception {
+        long id = criarPedido();
+
+        mockMvc.perform(patch("/api/pedidos/{id}/status", id)
+                        .header(HttpHeaders.AUTHORIZATION, autorizacao)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"status":"VOANDO"}"""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.codigo").value("DADOS_INVALIDOS"));
     }
 
     @Test

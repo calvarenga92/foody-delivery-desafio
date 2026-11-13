@@ -134,7 +134,7 @@ Escolhi `sessionStorage` em vez de `localStorage`: a sessão morre quando a aba 
 
 Testes unitários (`*Test`) rodam no Surefire com `mvn test`: são rápidos e não sobem contexto. Testes de integração (`*IT`) rodam no Failsafe com `mvn verify`: sobem a aplicação inteira e batem na API real, passando pelo filtro JWT.
 
-A separação permite rodar o ciclo rápido durante o desenvolvimento e o completo antes de entregar. São 24 testes no total, cobrindo a máquina de estados, o cálculo de valores, o fluxo de autenticação e os endpoints de pedido — incluindo os casos de recusa.
+A separação permite rodar o ciclo rápido durante o desenvolvimento e o completo antes de entregar. São 26 testes no total, cobrindo a máquina de estados, o cálculo de valores, o fluxo de autenticação e os endpoints de pedido — incluindo os casos de recusa.
 
 ## O que eu faria com mais tempo
 

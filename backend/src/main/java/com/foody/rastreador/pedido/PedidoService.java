@@ -44,6 +44,6 @@ public class PedidoService {
 
         pedido.alterarStatus(novoStatus);
 
-        return PedidoResponse.de(pedidoRepository.save(pedido));
+        return PedidoResponse.de(pedidoRepository.saveAndFlush(pedido));
     }
 }
