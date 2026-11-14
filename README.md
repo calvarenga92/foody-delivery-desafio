@@ -4,6 +4,11 @@ Desafio técnico CLAUDIO ALVARENGA — Foody Delivery 16/10
 
 Sistema simplificado de rastreamento de pedidos de delivery, com API REST em Java + Spring Boot e interface web em React.
 
+## Design e fluxo de UX
+
+- [Telas no Figma](https://www.figma.com/design/1T4Btch5hCvofWmRGmQM6x?node-id=2-3253)
+- [Fluxo de UX no Figma](https://www.figma.com/design/uTnOgVhzcVUIGBXPrWHoCf?node-id=26-402): do login ao pedido finalizado, com os estados de erro e a recusa de transição
+
 ## Organização
 
 Optei por monorepo com `backend/` e `frontend/` no mesmo repositório. A decisão foi pensada na avaliação: um único clone, um único histórico de commits, e a relação entre contrato de API e consumo fica visível lado a lado.
