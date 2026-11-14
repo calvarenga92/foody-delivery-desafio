@@ -4,6 +4,8 @@ Desafio técnico CLAUDIO ALVARENGA — Foody Delivery 16/10
 
 Sistema simplificado de rastreamento de pedidos de delivery, com API REST em Java + Spring Boot e interface web em React.
 
+**No ar:** [foody-rastreador.vercel.app](https://foody-rastreador.vercel.app)
+
 ## Design e fluxo de UX
 
 - [Telas no Figma](https://www.figma.com/design/1T4Btch5hCvofWmRGmQM6x?node-id=2-3253)
