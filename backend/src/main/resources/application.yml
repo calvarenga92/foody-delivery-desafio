@@ -16,6 +16,9 @@ app:
   jwt:
     secret: ${JWT_SECRET:chave-de-desenvolvimento-trocar-em-producao-min-32-bytes}
     expiracao-minutos: 120
+  cors:
+    # Origens do front autorizadas, separadas por virgula. Em producao vem do ambiente.
+    origens: ${CORS_ORIGENS:http://localhost:5173}
 
 server:
-  port: 8080
+  port: ${PORT:8080}

@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: foody-rastreador-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/auth/login
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGENS
+        sync: false
