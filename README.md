@@ -4,6 +4,13 @@ Desafio técnico CLAUDIO ALVARENGA — Foody Delivery 16/10
 
 Sistema simplificado de rastreamento de pedidos de delivery, com API REST em Java + Spring Boot e interface web em React.
 
+## No ar
+
+- Interface: https://foody-rastreador.vercel.app
+- API: https://foody-rastreador-api.onrender.com (saúde em `/api/saude`)
+
+Não há usuário de teste: crie uma conta na tela de entrada, no modo "cadastrar". A API roda no plano gratuito do Render e dorme quando fica ociosa, então a primeira requisição pode levar até um minuto. O banco é SQLite dentro do container e é recriado a cada novo deploy.
+
 ## Organização
 
 Optei por monorepo com `backend/` e `frontend/` no mesmo repositório. A decisão foi pensada na avaliação: um único clone, um único histórico de commits, e a relação entre contrato de API e consumo fica visível lado a lado.
