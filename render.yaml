@@ -5,7 +5,7 @@ services:
     rootDir: backend
     dockerfilePath: ./Dockerfile
     plan: free
-    healthCheckPath: /api/auth/login
+    healthCheckPath: /api/saude
     envVars:
       - key: JWT_SECRET
         generateValue: true
