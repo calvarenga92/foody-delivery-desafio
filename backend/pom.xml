@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.foody</groupId>
+    <groupId>com.rango</groupId>
     <artifactId>rastreador</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rastreador</name>

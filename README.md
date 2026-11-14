@@ -1,8 +1,6 @@
-# Mini Rastreador de Pedidos
+# Rango — Rastreador de Pedidos
 
-Desafio técnico CLAUDIO ALVARENGA — Foody Delivery 16/10
-
-Sistema simplificado de rastreamento de pedidos de delivery, com API REST em Java + Spring Boot e interface web em React.
+Projeto pessoal de Claudio Alvarenga: um rastreador de pedidos de delivery, com API REST em Java + Spring Boot e interface web em React. Cobre o ciclo de vida do pedido, do recebimento à entrega, com autenticação por JWT.
 
 ## No ar
 
@@ -18,7 +16,7 @@ Não há usuário de teste: crie uma conta na tela de entrada, no modo "cadastra
 
 ## Organização
 
-Optei por monorepo com `backend/` e `frontend/` no mesmo repositório. A decisão foi pensada na avaliação: um único clone, um único histórico de commits, e a relação entre contrato de API e consumo fica visível lado a lado.
+Optei por monorepo com `backend/` e `frontend/` no mesmo repositório. Para um projeto deste tamanho, um único clone e um único histórico de commits simplificam o trabalho, e a relação entre contrato de API e consumo fica visível lado a lado.
 
 ```
 .
@@ -128,7 +126,7 @@ A correção foi `saveAndFlush` apenas nesse ponto. Não é algo para espalhar: 
 
 A aplicação tem duas telas e a alternância depende só de estar autenticado ou não. React Router resolveria um problema que não existe aqui, e state manager também não: o estado é um contexto de autenticação e uma lista vinda da API.
 
-Não adicionei biblioteca de estilo. O CSS é próprio, com variáveis e suporte a tema claro e escuro, para não trazer dependência que o desafio não pediu.
+Não adicionei biblioteca de estilo. O CSS é próprio, com variáveis e suporte a tema claro e escuro, para não trazer dependência que o projeto não precisa.
 
 ### Quatro estados em cada tela
 
@@ -146,11 +144,11 @@ Escolhi `sessionStorage` em vez de `localStorage`: a sessão morre quando a aba 
 
 Testes unitários (`*Test`) rodam no Surefire com `mvn test`: são rápidos e não sobem contexto. Testes de integração (`*IT`) rodam no Failsafe com `mvn verify`: sobem a aplicação inteira e batem na API real, passando pelo filtro JWT.
 
-A separação permite rodar o ciclo rápido durante o desenvolvimento e o completo antes de entregar. São 26 testes no total, cobrindo a máquina de estados, o cálculo de valores, o fluxo de autenticação e os endpoints de pedido — incluindo os casos de recusa.
+A separação permite rodar o ciclo rápido durante o desenvolvimento e o completo antes de cada push. São 27 testes no total, cobrindo a máquina de estados, o cálculo de valores, o fluxo de autenticação e os endpoints de pedido — incluindo os casos de recusa.
 
 ## O que eu faria com mais tempo
 
-- **Migrations com Flyway** no lugar de `ddl-auto: update`. Funciona para um desafio, mas não é aceitável em produção: não há controle de versão do schema nem caminho de rollback.
+- **Migrations com Flyway** no lugar de `ddl-auto: update`. Funciona para um projeto pequeno, mas não é aceitável em produção: não há controle de versão do schema nem caminho de rollback.
 - **Refresh token.** Hoje o token expira em 2 horas e o usuário precisa entrar de novo. O front já trata o 401 como sessão expirada, então o encaixe existe.
 - **Paginação na listagem.** `GET /api/pedidos` devolve tudo. Com volume real isso não se sustenta.
 - **Testes de componente no front** com React Testing Library, cobrindo os quatro estados e o rollback da atualização otimista.

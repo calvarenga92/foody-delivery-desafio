@@ -3,7 +3,7 @@ import { Icone } from './Icone';
 
 type Tema = 'claro' | 'escuro';
 
-const CHAVE_TEMA = 'foody.tema';
+const CHAVE_TEMA = 'rango.tema';
 const consultaEscuro = () => window.matchMedia('(prefers-color-scheme: dark)');
 
 /** Tema efetivo: o escolhido pelo usuário ou, sem escolha, o do sistema. */
