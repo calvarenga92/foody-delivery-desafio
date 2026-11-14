@@ -48,7 +48,9 @@ export function usePedidos() {
 
       setPedidos((atuais) =>
         atuais.map((pedido) =>
-          pedido.id === id ? { ...pedido, status, transicoesDisponiveis: [] } : pedido,
+          pedido.id === id
+            ? { ...pedido, status, transicoesDisponiveis: [], atualizadoEm: new Date().toISOString() }
+            : pedido,
         ),
       );
 
