@@ -4,7 +4,7 @@ Projeto pessoal de Claudio Alvarenga: um rastreador de pedidos de delivery, com 
 
 ## No ar
 
-- Interface: https://foody-rastreador.vercel.app
+- Interface: https://rango-rastreador.vercel.app
 - API: https://foody-rastreador-api.onrender.com (saúde em `/api/saude`)
 
 Não há usuário de teste: crie uma conta na tela de entrada, no modo "cadastrar". A API roda no plano gratuito do Render e dorme quando fica ociosa, então a primeira requisição pode levar até um minuto. O banco é SQLite dentro do container e é recriado a cada novo deploy.
